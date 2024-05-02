@@ -18,7 +18,10 @@ public class ProjectsPage {
         PageFactory.initElements(DriverSingleton.getDriver(), this);
     }
 
-    @FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/aside/div/nav/a[3]")
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/aside/div/ul/li[3]/div")
+    public WebElement provisioningButton;
+
+    @FindBy(xpath = "/html/body/div[2]/div")
     public WebElement projectsButton;
 
     @FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/main/div[1]/span/div/button")
@@ -60,16 +63,18 @@ public class ProjectsPage {
     @FindBy(xpath = "//*[@id='description']")
     public WebElement milestoneDescription;
 
-    @FindBy(xpath = "/html/body/div[2]/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div[1]/div[7]/button")
+    @FindBy(xpath = "/html/body/div[4]/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div[1]/div[7]/button")
     public WebElement addMilestoneButton;
 
-    @FindBy(xpath = "/html/body/div[2]/div/div[2]/div/div[2]/div[3]/div/button[1]")
+    @FindBy(xpath = "/html/body/div[4]/div/div[2]/div/div[2]/div[3]/div/button[1]")
     public WebElement saveNewProjectButton;
 
     @FindBy(xpath = "//td[contains(., 'Project Description')]")
     public WebElement elementForVerificationProject;
 
     public void clickOnProjectPageButton() {
+        wait.until(ExpectedConditions.elementToBeClickable(provisioningButton));
+        provisioningButton.click();
         wait.until(ExpectedConditions.elementToBeClickable(projectsButton));
         projectsButton.click();
     }
@@ -124,7 +129,8 @@ public class ProjectsPage {
         wait.until(ExpectedConditions.elementToBeClickable(saveNewProjectButton));
         saveNewProjectButton.click();
     }
-    public String getProjectDescription(){
+
+    public String getProjectDescription() {
         return elementForVerificationProject.getText();
     }
 }

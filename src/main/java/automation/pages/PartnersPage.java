@@ -20,7 +20,7 @@ public class PartnersPage {
         PageFactory.initElements(DriverSingleton.getDriver(), this);
     }
 
-    @FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/aside/div/nav/a[1]/div/div[1]")
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/aside/div/ul/li[1]")
     public WebElement partnersButton;
 
     @FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/main/div[1]/span/div/button")
@@ -50,7 +50,7 @@ public class PartnersPage {
     @FindBy(xpath = "//*[@id='revenueType']")
     public WebElement revenueTypeDropdown;
 
-    @FindBy(xpath = "/html/body/div[2]/div/div[2]/div/div[2]/div[2]/div/div[2]/div/div/div[1]/div[5]/button")
+    @FindBy(xpath = "/html/body/div[4]/div/div[2]/div/div[2]/div[2]/div/div[2]/div/div/div[1]/div[5]/button")
     public WebElement addAdditionalInfoButton;
 
     @FindBy(xpath = "//*[@id='vatNumber']")
@@ -71,7 +71,7 @@ public class PartnersPage {
     @FindBy(xpath = "//td[@class='ant-table-cell ant-table-cell-ellipsis' and @title='Automation Test' and text()='Automation Test']")
     public WebElement elementForVerification;
 
-    @FindBy(xpath = "/html/body/div[2]/div/div[2]/div/div[2]/div[3]/div/button[1]")
+    @FindBy(xpath = "/html/body/div[4]/div/div[2]/div/div[2]/div[3]/div/button[1]")
     public WebElement saveNewPartnerButton;
 
     //    @FindBy(xpath = "/html/body/div[3]/div/div[2]/div/div[2]/div[3]/div/button[2]")

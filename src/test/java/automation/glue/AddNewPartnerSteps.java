@@ -20,7 +20,6 @@ import java.util.logging.Logger;
 public class AddNewPartnerSteps {
     PartnersPage partnersPage = new PartnersPage();
 
-    FrameworkProperties frameworkProperties = new FrameworkProperties();
     static Logger logger = Logger.getLogger(Log.class.getName());
     
     @Given("^I am on the IOD website and I click on Partners button")
@@ -36,7 +35,7 @@ public class AddNewPartnerSteps {
     }
 
     @And("I complete all needed fields and save new Partner")
-    public void iCompleteAllNeededFieldsAndSaveNewPartner() {
+    public void iCompleteAllNeededFieldsAndSaveNewPartner()  {
         partnersPage.fillNewPartnerModal();
         logger.info("User just completed add new partner modal");
     }

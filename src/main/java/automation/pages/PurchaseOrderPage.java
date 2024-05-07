@@ -83,11 +83,18 @@ public class PurchaseOrderPage {
     @FindBy(xpath = "//tr[td//text()[contains(., '66')]]")
     public WebElement assertPoNumber;
 
+    @FindBy(xpath = "//tr[td//text()[contains(., '66')]]/td[8]/div/button[2]")
+    public WebElement editButton;
+
+
     public void clickOnPurchaseOrderPageButton() {
+        wait.until(ExpectedConditions.elementToBeClickable(purchaseOrderButton));
         purchaseOrderButton.click();
     }
 
-    public void clickOnAddNewPurchaseOrder() {
+    public void clickOnAddNewPurchaseOrder() throws InterruptedException {
+        wait.until(ExpectedConditions.elementToBeClickable(addNewPurchaseOrderButton));
+        Thread.sleep(5000);
         addNewPurchaseOrderButton.click();
     }
 
@@ -117,7 +124,7 @@ public class PurchaseOrderPage {
         poStartDatePlaceholder.sendKeys("01.04.24", Keys.ENTER);
 
         wait.until(ExpectedConditions.elementToBeClickable(poEndDatePlaceholder));
-        poEndDatePlaceholder.sendKeys("30.04.24", Keys.ENTER);
+        poEndDatePlaceholder.sendKeys("31.05.24", Keys.ENTER);
 
         wait.until(ExpectedConditions.elementToBeClickable(poAmountPlaceholder));
         poAmountPlaceholder.sendKeys("300");
@@ -132,14 +139,14 @@ public class PurchaseOrderPage {
 //        ftesDropdown.sendKeys("Andrei JELEZ",Keys.ENTER);
 
         wait.until(ExpectedConditions.elementToBeClickable(activityDropdown));
-        activityDropdown.sendKeys("Activity",Keys.ENTER);
+        activityDropdown.sendKeys("10",Keys.ENTER);
 
         wait.until(ExpectedConditions.elementToBeClickable(saveNewPurchaseOrder));
         saveNewPurchaseOrder.click();
     }
 
-    public String checkIfPurchaseOrderAdded() {
-        return assertPoNumber.getText();
-    }
+//    public String checkIfPurchaseOrderAdded() {
+//        return assertPoNumber.getText();
+//    }
 
 }

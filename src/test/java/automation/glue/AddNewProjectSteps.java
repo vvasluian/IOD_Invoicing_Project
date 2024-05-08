@@ -8,7 +8,9 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 
-import static automation.glue.LogInSteps.logger;
+
+import static automation.glue.AddNewPurchaseOrderSteps.logger;
+
 
 public class AddNewProjectSteps {
 
@@ -37,7 +39,7 @@ public class AddNewProjectSteps {
 
     @Then("I check if Project was added")
     public void iCheckIfProjectWasAdded() {
-        Assertions.assertEquals("Project Description",projectsPage.getProjectDescription());
+        Assertions.assertEquals("Project Description", projectsPage.getProjectDescription());
         logger.info("User verify if project is created");
     }
 }

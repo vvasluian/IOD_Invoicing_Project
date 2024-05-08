@@ -34,13 +34,8 @@ public class AddNewPurchaseOrderSteps {
 
     @Then("I check if Purchase Order was added")
     public void iCheckIfPurchaseOrderWasAdded() {
-//        Assertions.assertEquals("Test Orange\n" +
-//                "66 Automation Test description\n" +
-//                "Andrei Buzdugan\n" +
-//                "29.04.2024\n" +
-//                "150 300",purchaseOrderPage.checkIfPurchaseOrderAdded());
-//        Assert.assertTrue(purchaseOrderPage.assertPoNumber.isDisplayed());
-//        Utils.takeScreenshot();
-//        logger.info("Purchase Order was added successfully");
+        Assert.assertTrue(purchaseOrderPage.assertPoNumber.isDisplayed());
+        Utils.takeScreenshot();
+        logger.info("Purchase Order was added successfully");
     }
 }

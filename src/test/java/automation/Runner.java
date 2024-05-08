@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {"pretty", "html:target/cucumber-report.html"},
-        features = "src/main/resources/features/LogIn.feature",
+        features = "src/main/resources/features",
         glue = {"glue", "automation", "automation/utils"}
 )
 public class Runner {

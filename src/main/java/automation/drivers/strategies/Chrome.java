@@ -14,6 +14,7 @@ public class Chrome implements DriverStrategy{
         options.setExperimentalOption("useAutomationExtension", false);
         options.addArguments("--ignore-ssl-errors=yes");
         options.addArguments("--ignore-certificate-errors");
+        options.addArguments("--remote-allow-origins=*");
 //        options.addArguments("--no-sandbox");
 
         return new ChromeDriver(options);

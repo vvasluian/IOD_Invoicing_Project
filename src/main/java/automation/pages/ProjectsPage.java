@@ -18,13 +18,13 @@ public class ProjectsPage {
         PageFactory.initElements(DriverSingleton.getDriver(), this);
     }
 
-    @FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/aside/div/ul/li[3]/div")
+    @FindBy(xpath = "//div[@role='menuitem']//*[name()='svg']")
     public WebElement provisioningButton;
 
-    @FindBy(xpath = "/html/body/div[2]/div")
+    @FindBy(xpath = "//a[normalize-space()='Projects']")
     public WebElement projectsButton;
 
-    @FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/main/div[1]/span/div/button")
+    @FindBy(xpath = "//span[normalize-space()='Add project']")
     public WebElement addNewProjectsButton;
 
     @FindBy(xpath = "//*[@id='projectName']")
@@ -63,10 +63,10 @@ public class ProjectsPage {
     @FindBy(xpath = "//*[@id='description']")
     public WebElement milestoneDescription;
 
-    @FindBy(xpath = "/html/body/div[4]/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div[1]/div[7]/button")
+    @FindBy(xpath = "//span[normalize-space()='Add']")
     public WebElement addMilestoneButton;
 
-    @FindBy(xpath = "/html/body/div[4]/div/div[2]/div/div[2]/div[3]/div/button[1]")
+    @FindBy(xpath = "//span[normalize-space()='Add new project']")
     public WebElement saveNewProjectButton;
 
     @FindBy(xpath = "//td[contains(., 'Project Description')]")
@@ -118,7 +118,7 @@ public class ProjectsPage {
         provisionedOnDate.sendKeys("01.24");
 
         wait.until(ExpectedConditions.elementToBeClickable(purchaseOrder));
-        purchaseOrder.sendKeys("Test BE", Keys.ENTER);
+        purchaseOrder.sendKeys("TEst BE", Keys.ENTER);
 
         wait.until(ExpectedConditions.elementToBeClickable(milestoneDescription));
         milestoneDescription.sendKeys("Project Description");

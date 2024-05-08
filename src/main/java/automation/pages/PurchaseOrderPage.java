@@ -20,7 +20,7 @@ public class PurchaseOrderPage {
         PageFactory.initElements(DriverSingleton.getDriver(), this);
     }
 
-    @FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/aside/div/ul/li[2]")
+    @FindBy(xpath = "//*[@id='root']/div/div[2]/aside/div/ul/li[2]")
     public WebElement purchaseOrderButton;
 
     @FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/main/div[1]/span/div/button")
@@ -65,16 +65,16 @@ public class PurchaseOrderPage {
     @FindBy(xpath = "//*[@id='ftes']")
     public WebElement ftesDropdown;
 
-    @FindBy(xpath = "//*[@id='milestone']")
+    @FindBy(xpath = "(//div[@class='ant-select-selector'])[8]")
     public WebElement milestoneDropdown;
 
-    @FindBy(xpath = "//*[@id='activity']")
+    @FindBy(id = "activity")
     public WebElement activityDropdown;
 
     @FindBy(xpath = "//*[@id='accrual']")
     public WebElement accrualDropdown;
 
-    @FindBy(xpath = "/html/body/div[4]/div/div[2]/div/div[2]/div[3]/div/button[1]")
+    @FindBy(xpath = "//button[@class='ant-btn css-1prvx5j ant-btn-default sc-hKFymg gZiDqm']//span[contains(text(),'Add new purchase order')]")
     public WebElement saveNewPurchaseOrder;
 
     @FindBy(xpath = "/html/body/div[5]/div/div[2]/div/div[2]/div[3]/div/button[2]")
@@ -88,7 +88,7 @@ public class PurchaseOrderPage {
 
 
     public void clickOnPurchaseOrderPageButton() {
-        wait.until(ExpectedConditions.elementToBeClickable(purchaseOrderButton));
+//        wait.until(ExpectedConditions.elementToBeClickable(purchaseOrderButton));
         purchaseOrderButton.click();
     }
 
@@ -112,7 +112,7 @@ public class PurchaseOrderPage {
         iodManagerDropdown.sendKeys("Andrei Buzdugan", Keys.ENTER);
 
         wait.until(ExpectedConditions.elementToBeClickable(revenueTypeDropdown));
-        revenueTypeDropdown.sendKeys("Per Volume", Keys.ENTER);
+        revenueTypeDropdown.sendKeys("Per Project", Keys.ENTER);
 
         wait.until(ExpectedConditions.elementToBeClickable(deliveryByDropdown));
         deliveryByDropdown.sendKeys("Delivered By Test");
@@ -138,15 +138,16 @@ public class PurchaseOrderPage {
 //        wait.until(ExpectedConditions.elementToBeClickable(ftesDropdown));
 //        ftesDropdown.sendKeys("Andrei JELEZ",Keys.ENTER);
 
-        wait.until(ExpectedConditions.elementToBeClickable(activityDropdown));
-        activityDropdown.sendKeys("10",Keys.ENTER);
+//        wait.until(ExpectedConditions.elementToBeClickable(milestoneDropdown));
+//        milestoneDropdown.sendKeys("wew");
+        milestoneDropdown.click();
+
+//        wait.until(ExpectedConditions.elementToBeClickable(activityDropdown));
+//        activityDropdown.sendKeys("10");
 
         wait.until(ExpectedConditions.elementToBeClickable(saveNewPurchaseOrder));
         saveNewPurchaseOrder.click();
+        Thread.sleep(5000);
     }
-
-//    public String checkIfPurchaseOrderAdded() {
-//        return assertPoNumber.getText();
-//    }
 
 }

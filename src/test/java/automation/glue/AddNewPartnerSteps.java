@@ -1,10 +1,6 @@
 package automation.glue;
 
-import automation.drivers.DriverSingleton;
-import automation.pages.LogInPage;
 import automation.pages.PartnersPage;
-import automation.utils.Constants;
-import automation.utils.FrameworkProperties;
 import automation.utils.Log;
 import automation.utils.Utils;
 import io.cucumber.java.en.And;
@@ -12,7 +8,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.WebDriver;
 
 
 import java.util.logging.Logger;
